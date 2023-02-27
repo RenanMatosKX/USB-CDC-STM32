@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:nowgo/Transfer_Page.dart';
 import 'package:nowgo/info_page.dart';
@@ -17,7 +16,7 @@ class InitPage extends StatefulWidget {
 class _InitPageState extends State<InitPage> {
   void initApp() {
     Timer(Duration(seconds: 3), () {
-      print("Yeah, this line is printed after 3 seconds");
+      print("Yeah, this line is printed after 5 seconds");
       setState(() {
         Navigator.push(
           context,
