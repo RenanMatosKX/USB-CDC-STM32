@@ -3,6 +3,8 @@ import 'package:nowgo/controller_page.dart';
 import 'package:nowgo/info_page.dart';
 import 'package:nowgo/setting_page.dart';
 import 'package:usb_serial/usb_serial.dart';
+int itemCount = 20;
+bool enabledReflesh = false;
 
 class usbDevicePage extends StatefulWidget {
   const usbDevicePage({super.key});
@@ -17,7 +19,16 @@ class _usbDevicePageState extends State<usbDevicePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-       
+         actions: [
+          Container(
+            width: 100,
+            child: Icon(
+              Icons.refresh,
+              color: enabledReflesh ? Colors.orange : Colors.grey,
+              size: 30.0,
+            ),
+          )
+        ],
         iconTheme: IconThemeData(color: Color.fromARGB(255, 242, 106, 75)),
         title: Text('USB Devices'),
         centerTitle: true,
@@ -25,8 +36,23 @@ class _usbDevicePageState extends State<usbDevicePage> {
         foregroundColor: Colors.white,
       ),
 
+      body: Column(
+        children: [
+
+                 ListTile(
+                  title: Text('Item ${(1+1)}'),
+                  leading: const Icon((Icons.person)),
+                  trailing: const Icon(Icons.select_all),
+                  onTap: (){
+                    debugPrint('Item ${(1+1)}');
+                  },
+                ),
 
 
+        ],
+      )
+      ,
+   
       //Menu Lateral
       drawer: Drawer(
         backgroundColor: Color.fromARGB(255, 64, 64, 64),
